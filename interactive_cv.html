@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alexander Korshunov · Risk & Controls</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+      padding: 2rem 1rem;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: white;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+      border-radius: 16px;
+      padding: 2.5rem 2.5rem 2rem;
+    }
+
+    /* ===== HEADER ===== */
+    .header {
+      border-bottom: 1px solid #e9edf2;
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .name-title h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #0f172a;
+      margin-bottom: 0.2rem;
+    }
+
+    .name-title .subhead {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #1e293b;
+      background: #f1f5f9;
+      display: inline-block;
+      padding: 0.1rem 0.8rem;
+      border-radius: 20px;
+    }
+
+    .contact {
+      text-align: right;
+      font-size: 0.9rem;
+      color: #334155;
+    }
+
+    .contact i {
+      width: 1.2rem;
+      color: #0f172a;
+    }
+
+    .contact a {
+      color: #0f172a;
+      text-decoration: none;
+      border-bottom: 1px dotted #cbd5e1;
+    }
+
+    .contact a:hover {
+      border-bottom: 1px solid #0f172a;
+    }
+
+    .visa-badge {
+      background: #e6f0fa;
+      color: #0f4c81;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      letter-spacing: 0.3px;
+      display: inline-block;
+      margin-top: 0.3rem;
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      color: #0f172a;
+      border-bottom: 1px solid #e9edf2;
+      padding-bottom: 0.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    /* ===== SUMMARY ===== */
+    .summary {
+      background: #f8fafc;
+      padding: 0.75rem 1rem;
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+      color: #1e293b;
+      border-left: 3px solid #0f172a;
+    }
+
+    /* ===== EXPERIENCE ===== */
+    .job {
+      margin-bottom: 1.25rem;
+    }
+
+    .job-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .job-title {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .job-company {
+      font-weight: 500;
+      color: #1e293b;
+    }
+
+    .job-date {
+      font-size: 0.8rem;
+      color: #64748b;
+      white-space: nowrap;
+    }
+
+    .job-tagline {
+      font-size: 0.8rem;
+      color: #475569;
+      margin: 0 0 0.3rem 0;
+    }
+
+    .job ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0.3rem;
+    }
+
+    .job li {
+      font-size: 0.88rem;
+      color: #1e293b;
+      padding-left: 1.2rem;
+      position: relative;
+      margin-bottom: 0.2rem;
+    }
+
+    .job li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: #94a3b8;
+    }
+
+    .highlight {
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    .badge {
+      background: #eef2f6;
+      font-size: 0.7rem;
+      padding: 0.1rem 0.6rem;
+      border-radius: 12px;
+      display: inline-block;
+      margin: 0.1rem 0;
+      color: #1e293b;
+    }
+
+    a {
+      color: #0f4c81;
+      text-decoration: none;
+      border-bottom: 1px dotted #bfd7f5;
+    }
+
+    a:hover {
+      border-bottom: 1px solid #0f4c81;
+    }
+
+    /* ===== CERTIFICATIONS ===== */
+    .certs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem 2rem;
+      font-size: 0.8rem;
+      color: #1e293b;
+    }
+
+    .certs-grid .cat {
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 0.15rem;
+    }
+
+    .certs-grid ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0;
+    }
+
+    .certs-grid li {
+      margin-bottom: 0.1rem;
+    }
+
+    .certs-grid i {
+      width: 1rem;
+      color: #64748b;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 700px) {
+      .container { padding: 1.5rem 1rem; }
+      .header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+      .contact { text-align: left; width: 100%; }
+      .certs-grid { grid-template-columns: 1fr; gap: 0.75rem; }
+      .job-header { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ===== HEADER ===== -->
+  <div class="header">
+    <div class="name-title">
+      <h1>Alexander Korshunov</h1>
+      <div class="subhead">Risk &amp; Audit Professional · Analytics &amp; Modelling</div>
+    </div>
+    <div class="contact">
+      <div><i class="fas fa-envelope"></i> <a href="mailto:askorshunovv@gmail.com">askorshunovv@gmail.com</a></div>
+      <div><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/askorshunovv" target="_blank">linkedin.com/in/askorshunovv</a></div>
+      <div><i class="fab fa-github"></i> <a href="https://github.com/nevsokii" target="_blank">github.com/nevsokii</a></div>
+      <div><i class="fas fa-map-pin"></i> Melbourne, Australia</div>
+      <div><span class="visa-badge"><i class="fas fa-passport"></i> Partner Visa · no sponsorship required</span></div>
+    </div>
+  </div>
+
+  <!-- ===== SUMMARY ===== -->
+  <div class="summary">
+    Risk &amp; Analytics professional with 4+ years across Big&nbsp;4 and data centre operations. Track record of identifying over <strong>A$320M</strong> in revenue leakage and cost savings via data-driven analysis &amp; audits. Skilled in risk analytics, internal audit, RCSA, regulatory compliance (APRA CPS230, Basel III, IFRS) and assessment of internal controls.
+  </div>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section>
+    <h2>Experience</h2>
+
+    <!-- Rostelecom -->
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title"><span class="job-company">Rostelecom Data Centres</span> (formerly SafeData) · Lead Risk &amp; Business Analyst</span>
+        <span class="job-date">Sep 2023 – Present</span>
+      </div>
+      <div class="job-tagline">Large-Scale Data Centre Operator · ~A$1.5B+ revenue</div>
+      <ul>
+        <li>Identified <span class="highlight">~A$230M</span> in annual revenue leakage through data analysis; uncovered excessive colocation discounts (up to 300% above policy) and unauthorised long-term rack reservations, driving immediate contract renegotiations and revised pricing policy.</li>
+        <li>Reduced electricity overpayments by <span class="highlight">70%</span>, saving <span class="highlight">~A$92M</span> annually; built an Excel analytical model comparing contracted power against actual consumption across 4,000 racks and supported renegotiation of 42 supplier agreements.</li>
+        <li>Reviewed the procurement approval cycle and identified duplicate workflows across EDO and ERP systems; recommended <span class="highlight">50%</span> cycle time reduction (23 → 12 days) through process streamlining and a dashboard for overdue approvals.</li>
+        <li>Designed and implemented a comprehensive internal controls framework, including KPIs and an annual Risk &amp; Control Self-Assessment (RCSA) process, strengthening governance in line with COSO and ISO 31000.</li>
+        <li>Automated capacity, sales, and operational performance (SLA, PUE) monitoring via interactive Power BI dashboards, integrating OLAP, Help Desk, and energy system data — reducing analysis time by <span class="highlight">50%</span>. <a href="https://nevskoii.github.io/monitoring_dashboards_dc/" target="_blank">Explore example</a>.</li>
+        <li>Led CAP monitoring migration to JIRA and implemented a compliance risk hotline; delivered workshops to strengthen enterprise risk culture.</li>
+        <li>Led end-to-end risk-based audits across core operational functions (Procurement, Sales, Capacity Planning), presenting findings and remediation roadmaps directly to executive management.</li>
+      </ul>
+    </div>
+
+    <!-- EY -->
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title"><span class="job-company">Former EY Russia</span> (Big 4) · Audit Associate (Staff → Advanced)</span>
+        <span class="job-date">Oct 2022 – Aug 2023</span>
+      </div>
+      <div class="job-tagline">Financial Services Practice – Banking Sector</div>
+      <ul>
+        <li>Identified and reported financial statement misstatements exceeding <span class="highlight">A$200M</span>, presenting proposed adjustments to management.</li>
+        <li>Executed external audits for a major banking client (<span class="highlight">A$70B+</span> assets) as part of a Big 4 engagement team.</li>
+        <li>Performed audit procedures over financial instruments, expected credit losses (IFRS 9), and regulatory capital (Basel III), ensuring compliance with IFRS 7, 9, 13, 16 and IAS 36, 37, 38.</li>
+        <li>Performed IFRS 9 credit portfolio testing, assessing expected credit losses (ECL) and validating key credit risk parameters (PD, LGD, EAD).</li>
+        <li>Automated audit workflows using Excel (Power Query, VBA), reducing manual testing and significantly improving audit efficiency.</li>
+      </ul>
+    </div>
+
+    <!-- Nornickel -->
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title"><span class="job-company">Nornickel</span> · Tax Specialist – Tax Monitoring &amp; Data Analytics (Contract)</span>
+        <span class="job-date">Oct 2021 – May 2022</span>
+      </div>
+      <div class="job-tagline">Global Leader in Nickel &amp; Palladium Mining</div>
+      <ul>
+        <li>Reconciled SAP tax data for regulatory reporting; delivered analytical reports and ad-hoc insights to finance stakeholders, supporting data-driven decision-making.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== EDUCATION ===== -->
+  <section>
+    <h2>Education</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+      <span><strong>Higher School of Economics (HSE University)</strong> · Moscow</span>
+      <span style="color:#475569; font-size:0.85rem;">QS Top‑100 Economics</span>
+    </div>
+    <div style="margin-top:0.2rem; font-size:0.9rem;">
+      <div><strong>Master of Science (Finance)</strong> · 2022–2025 · Specialisation: Risk Management &amp; Risk Modelling</div>
+      <div><strong>Bachelor of Science (Economics)</strong> · 2018–2022 · ACCA‑accredited program</div>
+    </div>
+  </section>
+
+  <!-- ===== CERTIFICATIONS ===== -->
+  <section>
+    <h2>Certifications</h2>
+    <div class="certs-grid">
+      <div>
+        <div class="cat"><i class="fas fa-code"></i> Technical &amp; Data Analytics</div>
+        <ul>
+          <li>Google Advanced Data Analytics <span style="color:#64748b;">(in progress, Q4 2026) · Coursera</span></li>
+          <li>SQL: Window Functions · Stepik <span style="color:#64748b;">(Jul 2026)</span></li>
+          <li>Introduction to Programming Using Python · HSE <span style="color:#64748b;">(Jan 2021)</span></li>
+        </ul>
+      </div>
+      <div>
+        <div class="cat"><i class="fas fa-shield-alt"></i> Compliance, Finance &amp; Risk</div>
+        <ul>
+          <li>ACCA Exemptions: Business &amp; Technology <span style="color:#64748b;">(Jan 2022)</span></li>
+          <li>EY Technology Risk Virtual Job Simulation · Forage <span style="color:#64748b;">(Jan 2026)</span></li>
+          <li>Business Processes in BPMN · Stepik <span style="color:#64748b;">(Jan 2025)</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <div style="border-top:1px solid #e9edf2; margin-top:1.5rem; padding-top:0.75rem; font-size:0.7rem; color:#94a3b8; display:flex; justify-content:space-between; flex-wrap:wrap;">
+    <span>© 2026 Alexander Korshunov</span>
+    <span><i class="fas fa-download"></i> <a href="#" onclick="window.print();return false;" style="border-bottom:none;">Download as PDF</a></span>
+  </div>
+
+</div>
+</body>
+</html>
